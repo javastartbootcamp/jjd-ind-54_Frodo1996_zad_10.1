@@ -3,8 +3,14 @@ package pl.javastart.task;
 import java.util.Objects;
 
 public class Book {
+
     private String title;
     private int pages;
+
+    public Book(String title, int pages) {
+        this.title = title;
+        this.pages = pages;
+    }
 
     public String getTitle() {
         return title;
@@ -14,7 +20,7 @@ public class Book {
         this.title = title;
     }
 
-    public double getPages() {
+    public int getPages() {
         return pages;
     }
 
@@ -39,6 +45,8 @@ public class Book {
         return Objects.hash(title, pages);
     }
 
-    public void addInformationAboutBooks() {
+    @Override
+    public String toString() {
+        return "Book{" + "title='" + title + '\'' + ", pages=" + pages + '}';
     }
 }
