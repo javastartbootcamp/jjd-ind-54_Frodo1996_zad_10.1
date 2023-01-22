@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BooksArray {
     private static final int MAX_ARRAY_SIZE = 3;
-    Book[] books = new Book[MAX_ARRAY_SIZE];
+    private final Book[] books = new Book[MAX_ARRAY_SIZE];
 
     public void addUniqueBook() {
         System.out.println("Podaj informację o trzech unikalnych książkach");
@@ -30,9 +30,9 @@ public class BooksArray {
     }
 
     public void getInfoAboutUniqueBooks() {
-        System.out.println(books[0].toString());
-        System.out.println(books[1].toString());
-        System.out.println(books[2].toString());
+        for (Book book : books) {
+            System.out.println(book);
+        }
     }
 
     public boolean isDuplicate(Book book, Book[] books) {
